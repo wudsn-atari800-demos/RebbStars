@@ -1,0 +1,42 @@
+#WUDSN IDE Converter Parameters
+#Mon Apr 07 20:30:45 CEST 2014
+converterDirection=IMAGE_TO_FILES
+filesConverterParameters.converterId=
+filesConverterParameters.imageAspect.factorX=1
+filesConverterParameters.imageAspect.factorY=1
+filesConverterParameters.displayAspect.factorX=1
+filesConverterParameters.displayAspect.factorY=1
+filesConverterParameters.displayShrinkToFit=false
+filesConverterParameters.displayZoomToFit=true
+filesConverterParameters.sourceFiles=0
+filesConverterParameters.imageFilePath=
+filesConverterParameters.columns=40
+filesConverterParameters.rows=24
+filesConverterParameters.spacingColor.red=0
+filesConverterParameters.spacingColor.green=0
+filesConverterParameters.spacingColor.blue=128
+filesConverterParameters.spacingWidth=0
+filesConverterParameters.palette=HIRES_1
+filesConverterParameters.paletteType=ATARI_DEFAULT
+filesConverterParameters.paletteRGBs=0
+imageConverterParameters.converterId=com.wudsn.ide.gfx.converter.atari8bit.LinearBitMapGraphics15Converter
+imageConverterParameters.imageAspect.factorX=1
+imageConverterParameters.imageAspect.factorY=1
+imageConverterParameters.displayAspect.factorX=1
+imageConverterParameters.displayAspect.factorY=1
+imageConverterParameters.displayShrinkToFit=false
+imageConverterParameters.displayZoomToFit=true
+imageConverterParameters.imageFilePath=RebbStars-Logo-Rebb.png
+imageConverterParameters.targetFiles=10
+imageConverterParameters.targetFiles.0.path=RebbStars-Logo-Rebb.pic
+imageConverterParameters.targetFiles.1.path=
+imageConverterParameters.targetFiles.2.path=
+imageConverterParameters.targetFiles.3.path=
+imageConverterParameters.targetFiles.4.path=
+imageConverterParameters.targetFiles.5.path=
+imageConverterParameters.targetFiles.6.path=
+imageConverterParameters.targetFiles.7.path=
+imageConverterParameters.targetFiles.8.path=
+imageConverterParameters.targetFiles.9.path=
+imageConverterParameters.useDefaultScript=true
+imageConverterParameters.script=function convertToFileData(data) {\r\n\tvar bpsl \= (data.getImageDataWidth() + 3) / 4;\r\n\tvar bytes \= []\r\n\tvar offset \= 0;\r\n\tfor (var y \= 0; y < data.getImageDataHeight(); y++) {\r\n\t    for (var x \= 0; x < data.getImageDataWidth(); x \= x + 4) {\r\n\t\t\tvar c1,c2,c3,c4;\r\n\t\t\tc1 \= data.getPixel(x, y) & 0x3;\r\n\t\t\tc2 \= data.getPixel(x+1, y) & 0x3;\r\n\t\t\tc3 \= data.getPixel(x+2, y) & 0x3;\r\n\t\t\tc4 \= data.getPixel(x+3, y) & 0x3;\r\n\t\t\tbytes[offset++] \= c1 << 6 | c2 << 4 | c3 << 2 | c4; \r\n\t    }\r\n\t}\r\n\tdata.setTargetFileObject(0, bytes);\r\n}

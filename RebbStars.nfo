@@ -1,0 +1,27 @@
+
+>>> RebbStars by JAC! <<<
+
+A 12k full overscan intro for stock Atari 800 XL/XE, 64k, PAL.
+Uses 150 Hz music replay that eats up 30% of the CPU to not sound like POKEY.
+Plus a software driven soft scroll to achieve hires scroller over animated
+overscan hires background that eats up the remaining CPU cycles.
+And yes, it thought it would be simple...believe me it's not with 1.79MHz :-)
+
+This is a tribute to the good cracktro style Amiga intros I am still in love with.
+Thanks to Shadow^GP for creating the original "Old Cranky Style" Amiga intro
+and allowing me to use the graphics for my demake. If only I had asked for the
+sinus table, too. It would have saved from writing a ripper that can rip sinus
+waves from AVI recordings :-)
+
+Released at the Oldscool Compo at Revision 2014 in Saarbruecken.
+Party version created 2013-12-17 to 2014-04-18. 
+Fixed version with proper logo colors, scoller text and packing updated on 2014-04-21.
+
+Code:  JAC!
+Logos: Rebb
+Music: Premium
+
+Greetings:
+ABBUC, Abyss, Agenda, Checkpoint, Cosine, Desire, DMA, Grey, MEGA, Genesis Projects, Lamers, MEC
+LaResistance, Mystic Bytes, Noice, Our5oft, Oxyron, Scarab, SvOlli, SquoQuo, Taquart, vcsdev
+and all other Atari lovers.

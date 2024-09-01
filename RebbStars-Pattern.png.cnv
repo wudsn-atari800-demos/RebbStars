@@ -1,0 +1,42 @@
+#WUDSN IDE Converter Parameters
+#Mon Apr 07 22:15:58 CEST 2014
+converterDirection=IMAGE_TO_FILES
+filesConverterParameters.converterId=
+filesConverterParameters.imageAspect.factorX=1
+filesConverterParameters.imageAspect.factorY=1
+filesConverterParameters.displayAspect.factorX=1
+filesConverterParameters.displayAspect.factorY=1
+filesConverterParameters.displayShrinkToFit=false
+filesConverterParameters.displayZoomToFit=true
+filesConverterParameters.sourceFiles=0
+filesConverterParameters.imageFilePath=
+filesConverterParameters.columns=40
+filesConverterParameters.rows=24
+filesConverterParameters.spacingColor.red=0
+filesConverterParameters.spacingColor.green=0
+filesConverterParameters.spacingColor.blue=128
+filesConverterParameters.spacingWidth=0
+filesConverterParameters.palette=HIRES_1
+filesConverterParameters.paletteType=ATARI_DEFAULT
+filesConverterParameters.paletteRGBs=0
+imageConverterParameters.converterId=com.wudsn.ide.gfx.converter.atari8bit.LinearBitMapGraphics8Converter
+imageConverterParameters.imageAspect.factorX=1
+imageConverterParameters.imageAspect.factorY=1
+imageConverterParameters.displayAspect.factorX=1
+imageConverterParameters.displayAspect.factorY=1
+imageConverterParameters.displayShrinkToFit=false
+imageConverterParameters.displayZoomToFit=true
+imageConverterParameters.imageFilePath=RebbStars-Pattern.png
+imageConverterParameters.targetFiles=10
+imageConverterParameters.targetFiles.0.path=RebbStars-Pattern.chr
+imageConverterParameters.targetFiles.1.path=
+imageConverterParameters.targetFiles.2.path=
+imageConverterParameters.targetFiles.3.path=
+imageConverterParameters.targetFiles.4.path=
+imageConverterParameters.targetFiles.5.path=
+imageConverterParameters.targetFiles.6.path=
+imageConverterParameters.targetFiles.7.path=
+imageConverterParameters.targetFiles.8.path=
+imageConverterParameters.targetFiles.9.path=
+imageConverterParameters.useDefaultScript=false
+imageConverterParameters.script=function getByte(data, x, y){\r\n\tvar b \= 0;\r\n\tfor (var p \= 0; p < 8; p++) {\r\n\t\tvar color;\r\n\t\tcolor \= data.getPixel(x + p, y);\r\n\t\tif (color \!\= 0) {\r\n\t\t\tb \= b | 1 << 7 - p;\r\n\t\t}\r\n\t}\r\n\treturn b;\r\n}\r\n\r\nfunction convertToFileData(data) {\r\n\tvar bpsl \= (data.getImageDataWidth() + 7) / 8;\r\n\tvar bytes \= []\r\n\r\n\tfor (var f\=0; f<4; f++){\r\n\t  for (var c\=0; c<64; c++) {\r\n            var ybase \= (f*128+c)*32; // Skip every 2nd\r\n\t    for( var y\=0; y<8; y++){\r\n\t\tvar offset1 \= f*2048+c*8+y;\r\n\t\tvar offset2 \= f*2048+c*8+y+1024;\r\n\r\n\t  \t  var b;\r\n\t\t  b \= getByte(data, 0, ybase+y+0);\r\n\t  \t  bytes[offset1+0] \= b;\r\n\t  \t  b \= getByte(data, 8, ybase+y+0);\r\n\t  \t  bytes[offset1+512] \= b;\r\n\t  \t  b \= getByte(data, 0, ybase+y+8);\r\n\t  \t  bytes[offset2+0] \= b;\r\n\t  \t  b \= getByte(data, 8, ybase+y+8);\r\n\t  \t  bytes[offset2+512] \= b;\r\n\r\n \t    }\r\n          }\r\n\t}\r\n\tdata.setTargetFileObject(0, bytes);\r\n}
